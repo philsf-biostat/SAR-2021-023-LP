@@ -44,6 +44,8 @@ data.raw <- data.raw %>%
     comp_inst = str_detect(complicacoes, regex("instab|luxa", ignore_case = TRUE)),
     # deiscência
     comp_deisc = str_detect(complicacoes, regex("deisc", ignore_case = TRUE)),
+    # infeccção
+    comp_infec = str_detect(complicacoes, regex("infec", ignore_case = TRUE)),
   )
 
 # labels ------------------------------------------------------------------
