@@ -37,13 +37,13 @@ data.raw <- data.raw %>%
   ) %>%
   mutate(
     # anemia - qualquer
-    anemia = str_detect(complicacoes, regex("anemia", ignore_case = TRUE)),
+    comp_anemia = str_detect(complicacoes, regex("anemia", ignore_case = TRUE)),
     # tep
-    tep = str_detect(complicacoes, regex("tep", ignore_case = TRUE)),
+    comp_tep = str_detect(complicacoes, regex("tep", ignore_case = TRUE)),
     # instabilidade
-    inst = str_detect(complicacoes, regex("instab|luxa", ignore_case = TRUE)),
+    comp_inst = str_detect(complicacoes, regex("instab|luxa", ignore_case = TRUE)),
     # deiscência
-    deisc = str_detect(complicacoes, regex("deisc", ignore_case = TRUE)),
+    comp_deisc = str_detect(complicacoes, regex("deisc", ignore_case = TRUE)),
   )
 
 # labels ------------------------------------------------------------------
