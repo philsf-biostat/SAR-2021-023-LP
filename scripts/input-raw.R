@@ -19,9 +19,11 @@ data.raw <- read_excel("dataset/atq septuagenarios DESCONTADOS.xlsx") %>%
 data.raw <- data.raw %>%
   # select() %>%
   mutate(
+    # converter comorbidades para booleano
     has = !is.na(has),
     dm = !is.na(dm),
     tabagismo = !is.na(tabagismo),
+    ex_tabagista = !is.na(ex_tabagista),
   ) %>%
   filter()
 
