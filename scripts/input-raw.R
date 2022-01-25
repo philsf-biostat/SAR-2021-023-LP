@@ -25,6 +25,7 @@ data.raw <- data.raw %>%
     tabagismo = !is.na(tabagismo),
     ex_tabagista = !is.na(ex_tabagista),
     lateralidade = toupper(lateralidade),
+    cor = str_replace(cor, "PRETO", "PRETA"),
   ) %>%
   filter()
 
