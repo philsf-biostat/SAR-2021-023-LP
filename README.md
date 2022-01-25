@@ -1,22 +1,16 @@
-<!-- Instruções -->
+# Preparo da base de dados de estudo retrospectivo de complicações após revisão de artroplastia total de quadril em idosos
 
-<!-- - substituir 2021-023-LP -->
-<!-- - v01: substituir mmm01/mmm02 pela milestone -->
-<!-- - v02: substituir ppp01/ppp02 pelo projeto -->
-<!-- - Remover esse bloco -->
+Identificação de cada tipo de complicação pós-cirúrgica dos participantes incluídos na base com chaves de busca por expressões regulares
 
-# título
-
-Objetivo
-
-Análise Estatística para PESSOA (LOCAL, aaaa)
+Análise Estatística para Lourenço Peixoto (INTO, 2021)
 
 ## Análises realizadas
 
-1. Análise descritiva
-1. Análise inferencial
-1. Análise de poder
-1. Modelagem estatística
+1. Limpeza e manipulação de dados
+<!-- 1. Análise descritiva -->
+<!-- 1. Análise inferencial -->
+<!-- 1. Análise de poder -->
+<!-- 1. Modelagem estatística -->
 
 ## Documentos
 
@@ -25,8 +19,8 @@ Análise Estatística para PESSOA (LOCAL, aaaa)
 <!-- - [Visualização online][sapviz-v02] -->
 <!-- - [Download][sappdf-v02] -->
 
-- [Visualização online][sapviz-v01]
-- [PDF][sappdf-v01]
+<!-- - [Visualização online][sapviz-v01] -->
+<!-- - [PDF][sappdf-v01] -->
 
 ### Relatório de Análise Estatística (SAR)
 

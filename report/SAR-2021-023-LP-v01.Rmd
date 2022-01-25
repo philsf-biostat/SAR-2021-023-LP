@@ -1,7 +1,7 @@
 ---
-title: "[title]"
+title: "Preparo da base de dados de estudo retrospectivo de complicações após revisão de artroplastia total de quadril em idosos"
 subtitle: 'DOCUMENTO: SAR-2021-023-LP-v01'
-author: '**De:** Felipe Figueiredo **Para:** ___'
+author: '**De:** Felipe Figueiredo **Para:** Lourenço Peixoto'
 date: "`r Sys.Date()`"
 output:
   html_document:
@@ -37,7 +37,7 @@ panderOptions('table.split.table', 160)
 
 \newpage
 
-**[title]**
+**Preparo da base de dados de estudo retrospectivo de complicações após revisão de artroplastia total de quadril em idosos**
 
 **Histórico do documento**
 
@@ -104,7 +104,7 @@ tab_inf %>%
 
 # Referências
 
-- **SAP-2021-023-LP-v01** -- Plano Analítico para [title]
+- **SAP-2021-023-LP-v01** -- Plano Analítico para Preparo da base de dados de estudo retrospectivo de complicações após revisão de artroplastia total de quadril em idosos
 <!-- - Cohen, J. (1988). Statistical power analysis for the behavioral sciences (2nd Ed.). New York: Routledge. -->
 
 # Apêndice
