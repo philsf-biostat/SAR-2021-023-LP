@@ -81,21 +81,21 @@ Esta análise foi realizada utilizando-se o software `R` versão `r getRversion(
 ## População do estudo e acompanhamento
 
 ```{r tab_desc}
-tab_desc %>%
-    as_kable(
-    align = "lccc",
-    caption = "**Tabela 1** caption"
-  )
+# tab_desc %>%
+#     as_kable(
+#     align = "lccc",
+#     caption = "**Tabela 1** caption"
+#   )
 ```
 
 ## Análise inferencial
 
 ```{r tab_inf}
-tab_inf %>%
-    as_kable(
-    align = "lccc",
-    caption = "**Tabela 2** caption"
-  )
+# tab_inf %>%
+#     as_kable(
+#     align = "lccc",
+#     caption = "**Tabela 2** caption"
+#   )
 ```
 
 # Observações e limitações
