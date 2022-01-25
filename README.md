@@ -14,7 +14,7 @@ Análise Estatística para Lourenço Peixoto (INTO, 2021)
 
 ## Documentos
 
-### Plano Analítico (SAP)
+<!-- ### Plano Analítico (SAP) -->
 
 <!-- - [Visualização online][sapviz-v02] -->
 <!-- - [Download][sappdf-v02] -->
