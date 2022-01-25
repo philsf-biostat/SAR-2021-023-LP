@@ -40,12 +40,36 @@ data.raw <- data.raw %>%
     comp_anemia = str_detect(complicacoes, regex("anemia", ignore_case = TRUE)),
     # tep
     comp_tep = str_detect(complicacoes, regex("tep", ignore_case = TRUE)),
+    # tev
+    comp_tev = str_detect(complicacoes, regex("tev", ignore_case = TRUE)),
+    # tvp
+    comp_tvp = str_detect(complicacoes, regex("tvp", ignore_case = TRUE)),
     # instabilidade
     comp_inst = str_detect(complicacoes, regex("instab|luxa", ignore_case = TRUE)),
     # deiscência
     comp_deisc = str_detect(complicacoes, regex("deisc", ignore_case = TRUE)),
     # infeccção
     comp_infec = str_detect(complicacoes, regex("infec", ignore_case = TRUE)),
+    # disturbios hidro eletroliticos
+    comp_hidro = str_detect(complicacoes, regex("hidro", ignore_case = TRUE)),
+    # embolia
+    comp_embol = str_detect(complicacoes, regex("embol", ignore_case = TRUE)),
+    # delirium
+    comp_delir = str_detect(complicacoes, regex("delir", ignore_case = TRUE)),
+
+    # qualquer complicacao acima
+    # comp_qualquer = any(comp_anemia, comp_tep, comp_inst, comp_deisc, comp_infec, comp_hidro, comp_embol, comp_delir),
+    comp_qualquer =
+      comp_anemia +
+      comp_tep +
+      comp_tev +
+      comp_tvp +
+      comp_inst +
+      comp_deisc +
+      comp_infec +
+      comp_hidro +
+      comp_delir +
+      comp_embol > 0,
   )
 
 # labels ------------------------------------------------------------------
