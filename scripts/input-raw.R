@@ -40,7 +40,8 @@ data.raw <- data.raw %>%
     anemia = str_detect(complicacoes, regex("anemia", ignore_case = TRUE)),
     # tep
     tep = str_detect(complicacoes, regex("tep", ignore_case = TRUE)),
-    
+    # instabilidade
+    inst = str_detect(complicacoes, regex("instab|luxa", ignore_case = TRUE)),
   )
 
 # labels ------------------------------------------------------------------
