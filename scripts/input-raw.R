@@ -19,9 +19,13 @@ data.raw <- read_excel("dataset/atq septuagenarios DESCONTADOS.xlsx") %>%
 data.raw <- data.raw %>%
   # select() %>%
   mutate(
+    # converter comorbidades para booleano
     has = !is.na(has),
     dm = !is.na(dm),
     tabagismo = !is.na(tabagismo),
+    ex_tabagista = !is.na(ex_tabagista),
+    lateralidade = toupper(lateralidade),
+    cor = str_replace(cor, "PRETO", "PRETA"),
   ) %>%
   filter()
 
@@ -33,10 +37,57 @@ data.raw <- data.raw %>%
   ) %>%
   mutate(
     # anemia - qualquer
-    anemia = str_detect(complicacoes, regex("anemia", ignore_case = TRUE)),
-    # tep
-    tep = str_detect(complicacoes, regex("tep", ignore_case = TRUE)),
-    
+    comp_anemia = str_detect(complicacoes, regex("anemia", ignore_case = TRUE)),
+    # tep / embolia
+    comp_tep = str_detect(complicacoes, regex("tep|embol", ignore_case = TRUE)),
+    # tev
+    comp_tev = str_detect(complicacoes, regex("tev", ignore_case = TRUE)),
+    # tvp
+    comp_tvp = str_detect(complicacoes, regex("tvp|trombo|venose", ignore_case = TRUE)),
+    # instabilidade
+    comp_inst = str_detect(complicacoes, regex("instab|luxa|soltura", ignore_case = TRUE)),
+    # deiscência
+    comp_deisc = str_detect(complicacoes, regex("deisc", ignore_case = TRUE)),
+    # infeccção
+    comp_infec = str_detect(complicacoes, regex("infec", ignore_case = TRUE)),
+    # disturbios hidro eletroliticos
+    comp_hidro = str_detect(complicacoes, regex("hidro|eletr[oó]l[íi]t", ignore_case = TRUE)),
+    # delirium
+    comp_delir = str_detect(complicacoes, regex("delir", ignore_case = TRUE)),
+    # óbito
+    comp_obito = str_detect(complicacoes, regex("[óo]bito|morte", ignore_case = TRUE)),
+    # ITU
+    comp_itu = str_detect(complicacoes, regex("itu", ignore_case = TRUE)),
+    # sepse
+    comp_sepse = str_detect(complicacoes, regex("s[ée]p[st]", ignore_case = TRUE)),
+    # pneumonia
+    comp_pneumo = str_detect(complicacoes, regex("pneumonia", ignore_case = TRUE)),
+    # FX
+    comp_fx = str_detect(complicacoes, regex("fx", ignore_case = TRUE)),
+    # parestesia
+    comp_parest = str_detect(complicacoes, regex("parest", ignore_case = TRUE)),
+
+    # qualquer complicacao acima
+    # comp_qualquer = any(comp_anemia, comp_tep, comp_inst, comp_deisc, comp_infec, comp_hidro, comp_embol, comp_delir),
+    comp_qualquer =
+      comp_anemia +
+      comp_tep +
+      comp_tev +
+      comp_tvp +
+      comp_inst +
+      comp_deisc +
+      comp_hidro +
+      comp_delir +
+      comp_obito +
+      comp_itu +
+      comp_sepse +
+      comp_pneumo +
+      comp_fx +
+      comp_parest +
+      comp_infec > 0,
+
+    # grupo
+    group = idade >= 70,
   )
 
 # labels ------------------------------------------------------------------
