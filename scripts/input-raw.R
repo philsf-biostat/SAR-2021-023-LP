@@ -64,6 +64,8 @@ data.raw <- data.raw %>%
     comp_pneumo = str_detect(complicacoes, regex("pneumonia", ignore_case = TRUE)),
     # FX
     comp_fx = str_detect(complicacoes, regex("fx", ignore_case = TRUE)),
+    # parestesia
+    comp_parest = str_detect(complicacoes, regex("parest", ignore_case = TRUE)),
 
     # qualquer complicacao acima
     # comp_qualquer = any(comp_anemia, comp_tep, comp_inst, comp_deisc, comp_infec, comp_hidro, comp_embol, comp_delir),
@@ -81,6 +83,7 @@ data.raw <- data.raw %>%
       comp_sepse +
       comp_pneumo +
       comp_fx +
+      comp_parest +
       comp_infec > 0,
 
     # grupo
