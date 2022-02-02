@@ -43,7 +43,7 @@ data.raw <- data.raw %>%
     # tev
     comp_tev = str_detect(complicacoes, regex("tev", ignore_case = TRUE)),
     # tvp
-    comp_tvp = str_detect(complicacoes, regex("tvp", ignore_case = TRUE)),
+    comp_tvp = str_detect(complicacoes, regex("tvp|trombo|venose", ignore_case = TRUE)),
     # instabilidade
     comp_inst = str_detect(complicacoes, regex("instab|luxa", ignore_case = TRUE)),
     # deiscência
