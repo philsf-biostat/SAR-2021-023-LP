@@ -72,6 +72,9 @@ data.raw <- data.raw %>%
       comp_hidro +
       comp_delir +
       comp_embol > 0,
+
+    # grupo
+    group = idade >= 70,
   )
 
 # labels ------------------------------------------------------------------
