@@ -11,43 +11,54 @@ library(labelled)
 # data loading ------------------------------------------------------------
 set.seed(42)
 data.raw <- tibble(id=gl(2, 10), group = gl(2, 10), outcome = rnorm(20))
-# data.raw <- read_excel("dataset/file.xlsx") %>%
-#   janitor::clean_names()
+data.raw <- read_excel("dataset/atq septuagenarios DESCONTADOS.xlsx") %>%
+  janitor::clean_names()
 
 # data cleaning -----------------------------------------------------------
 
 data.raw <- data.raw %>%
   # select() %>%
-  mutate() %>%
+  mutate(
+    has = !is.na(has),
+    dm = !is.na(dm),
+    tabagismo = !is.na(tabagismo),
+  ) %>%
   filter()
 
 # data wrangling ----------------------------------------------------------
 
 data.raw <- data.raw %>%
   mutate(
-    id = factor(id), # or as.character
+    prontuario = factor(prontuario), # or as.character
+  ) %>%
+  mutate(
+    # anemia - qualquer
+    anemia = str_detect(complicacoes, regex("anemia", ignore_case = TRUE)),
+    # tep
+    tep = str_detect(complicacoes, regex("tep", ignore_case = TRUE)),
+    
   )
 
 # labels ------------------------------------------------------------------
 
 data.raw <- data.raw %>%
   set_variable_labels(
-    group = "Study group",
-    outcome = "Study outcome",
+    # group = "Study group",
+    # outcome = "Study outcome",
   )
 
 # analytical dataset ------------------------------------------------------
 
-analytical <- data.raw %>%
+analytical <- data.raw #%>%
   # select analytic variables
-  select(
-    id,
-    group,
-    outcome,
-  )
+  # select(
+    # prontuario,
+    # group,
+    # outcome,
+  # )
 
 # mockup of analytical dataset for SAP and public SAR
-analytical_mockup <- tibble( id = c( "1", "2", "3", "...", as.character(nrow(analytical)) ) ) %>%
-  left_join(analytical %>% head(0), by = "id") %>%
+analytical_mockup <- tibble( prontuario = c( "1", "2", "3", "...", as.character(nrow(analytical)) ) ) %>%
+  left_join(analytical %>% head(0), by = "prontuario") %>%
   mutate_all(as.character) %>%
   replace(is.na(.), "")
