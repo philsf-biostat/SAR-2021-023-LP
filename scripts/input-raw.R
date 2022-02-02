@@ -56,6 +56,8 @@ data.raw <- data.raw %>%
     comp_delir = str_detect(complicacoes, regex("delir", ignore_case = TRUE)),
     # óbito
     comp_obito = str_detect(complicacoes, regex("[óo]bito|morte", ignore_case = TRUE)),
+    # ITU
+    comp_itu = str_detect(complicacoes, regex("itu", ignore_case = TRUE)),
 
     # qualquer complicacao acima
     # comp_qualquer = any(comp_anemia, comp_tep, comp_inst, comp_deisc, comp_infec, comp_hidro, comp_embol, comp_delir),
@@ -68,6 +70,7 @@ data.raw <- data.raw %>%
       comp_deisc +
       comp_hidro +
       comp_delir +
+      comp_itu +
       comp_infec > 0,
 
     # grupo
