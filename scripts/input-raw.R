@@ -45,7 +45,7 @@ data.raw <- data.raw %>%
     # tvp
     comp_tvp = str_detect(complicacoes, regex("tvp|trombo|venose", ignore_case = TRUE)),
     # instabilidade
-    comp_inst = str_detect(complicacoes, regex("instab|luxa", ignore_case = TRUE)),
+    comp_inst = str_detect(complicacoes, regex("instab|luxa|soltura", ignore_case = TRUE)),
     # deiscência
     comp_deisc = str_detect(complicacoes, regex("deisc", ignore_case = TRUE)),
     # infeccção
