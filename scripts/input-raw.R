@@ -38,8 +38,8 @@ data.raw <- data.raw %>%
   mutate(
     # anemia - qualquer
     comp_anemia = str_detect(complicacoes, regex("anemia", ignore_case = TRUE)),
-    # tep
-    comp_tep = str_detect(complicacoes, regex("tep", ignore_case = TRUE)),
+    # tep / embolia
+    comp_tep = str_detect(complicacoes, regex("tep|embol", ignore_case = TRUE)),
     # tev
     comp_tev = str_detect(complicacoes, regex("tev", ignore_case = TRUE)),
     # tvp
@@ -52,8 +52,6 @@ data.raw <- data.raw %>%
     comp_infec = str_detect(complicacoes, regex("infec", ignore_case = TRUE)),
     # disturbios hidro eletroliticos
     comp_hidro = str_detect(complicacoes, regex("hidro", ignore_case = TRUE)),
-    # embolia
-    comp_embol = str_detect(complicacoes, regex("embol", ignore_case = TRUE)),
     # delirium
     comp_delir = str_detect(complicacoes, regex("delir", ignore_case = TRUE)),
     # óbito
@@ -68,10 +66,9 @@ data.raw <- data.raw %>%
       comp_tvp +
       comp_inst +
       comp_deisc +
-      comp_infec +
       comp_hidro +
       comp_delir +
-      comp_embol > 0,
+      comp_infec > 0,
 
     # grupo
     group = idade >= 70,
