@@ -51,7 +51,7 @@ data.raw <- data.raw %>%
     # infeccção
     comp_infec = str_detect(complicacoes, regex("infec", ignore_case = TRUE)),
     # disturbios hidro eletroliticos
-    comp_hidro = str_detect(complicacoes, regex("hidro", ignore_case = TRUE)),
+    comp_hidro = str_detect(complicacoes, regex("hidro|eletr[oó]l[íi]t", ignore_case = TRUE)),
     # delirium
     comp_delir = str_detect(complicacoes, regex("delir", ignore_case = TRUE)),
     # óbito
