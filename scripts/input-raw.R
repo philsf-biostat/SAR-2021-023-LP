@@ -56,6 +56,8 @@ data.raw <- data.raw %>%
     comp_embol = str_detect(complicacoes, regex("embol", ignore_case = TRUE)),
     # delirium
     comp_delir = str_detect(complicacoes, regex("delir", ignore_case = TRUE)),
+    # óbito
+    comp_obito = str_detect(complicacoes, regex("[óo]bito|morte", ignore_case = TRUE)),
 
     # qualquer complicacao acima
     # comp_qualquer = any(comp_anemia, comp_tep, comp_inst, comp_deisc, comp_infec, comp_hidro, comp_embol, comp_delir),
