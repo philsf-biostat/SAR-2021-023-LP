@@ -60,6 +60,8 @@ data.raw <- data.raw %>%
     comp_itu = str_detect(complicacoes, regex("itu", ignore_case = TRUE)),
     # sepse
     comp_sepse = str_detect(complicacoes, regex("s[ée]p[st]", ignore_case = TRUE)),
+    # pneumonia
+    comp_pneumo = str_detect(complicacoes, regex("pneumonia", ignore_case = TRUE)),
 
     # qualquer complicacao acima
     # comp_qualquer = any(comp_anemia, comp_tep, comp_inst, comp_deisc, comp_infec, comp_hidro, comp_embol, comp_delir),
@@ -72,8 +74,10 @@ data.raw <- data.raw %>%
       comp_deisc +
       comp_hidro +
       comp_delir +
+      comp_obito +
       comp_itu +
       comp_sepse +
+      comp_pneumo +
       comp_infec > 0,
 
     # grupo
