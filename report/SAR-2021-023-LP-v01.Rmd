@@ -50,6 +50,10 @@ colnames(history) <- c("Versão", "Alterações")
 kable(history)
 ```
 
+```{r results, include=FALSE}
+source("scripts/results.R", encoding = 'UTF-8')
+```
+
 ---
 
 # Lista de abreviaturas
@@ -60,11 +64,9 @@ kable(history)
 
 ## Recepção e tratamento dos dados
 
-# Metodologia
+Depois dos procedimentos de limpeza e seleção `r ncol(analytical)` variáveis foram incluídas na análise com `r nrow(analytical)` observações.
 
-```{r results, include=FALSE}
-source("scripts/results.R", encoding = 'UTF-8')
-```
+# Metodologia
 
 ## Variáveis
 
