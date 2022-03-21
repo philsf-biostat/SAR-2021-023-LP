@@ -2,7 +2,7 @@
 title: "Preparo da base de dados de estudo retrospectivo de complicações após revisão de artroplastia total de quadril em idosos"
 subtitle: 'DOCUMENTO: SAR-2021-023-LP-v01'
 author: '**De:** Felipe Figueiredo **Para:** Lourenço Peixoto'
-date: "`r Sys.Date()`"
+date: "2022-02-02"
 output:
   html_document:
     fig_caption: yes
@@ -50,59 +50,220 @@ colnames(history) <- c("Versão", "Alterações")
 kable(history)
 ```
 
+```{r results, include=FALSE}
+source("scripts/input-raw.R", encoding = 'UTF-8')
+```
+
 ---
 
 # Lista de abreviaturas
 
+- ATQ: artroplastia total de quadril
+- FX:
+- TEV: tromboembolismo venoso
+- TEP: tromboembolia pulmonar
+- TVP: trombose venose profunda
+- ITU:
+
 # Contexto
+
+O projeto "Artroplastia total do Quadril em septuagenários, complicações e resultados a curto prazo" identificará ocorrências de complicações após ATQ em pacientes septuagenários quando comparados a pacientes de faixas etárias inferiores.
+As complicações foram descritas de maneira qualitativa em campo de texto aberto, onde havia a possibilidade de múltiplas observações para um mesmo paciente.
+Para a análise das ocorrências das complicações, elas precisam ser codificadas como variáveis dicotômicas.
+
+Este relatório técnico descreve como as complicações foram identificadas na base de dados original, em campo de texto aberto, usando expressões regulares.
 
 ## Objetivos
 
+Limpeza da base de dados e identificação de cada tipo de complicação pós-cirúrgica dos participantes incluídos na base com chaves de busca por expressões regulares.
+
 ## Recepção e tratamento dos dados
+
+A base de dados original possuía `r Nvar_orig` variáveis coletadas de `r Nobs_orig` observações.
+Depois dos procedimentos de limpeza e seleção a base final contava com `r Nvar_final` variáveis de `r Nobs_final` observações.
+Nenhuma variávei foi removida no preparo da base, e a diferença é composta apenas pelas novas variáveis indicadoras criadas para classificar todas as possíveis complicações em cada participante incluído na base.
+Nenhuma observação foi excluída como parte dos processos de limpeza de dados.
 
 # Metodologia
 
-```{r results, include=FALSE}
-source("scripts/results.R", encoding = 'UTF-8')
-```
-
 ## Variáveis
 
-### Desfechos primário e secundário
+### Complicações listadas no projeto
 
-### Covariáveis
+- tromboembolismo venoso
+- embolia pulmonar
+- anemia com necessidade de transfusão sanguínea
+- distúrbios hidroeletrolíticos com repercussão clínica
+- infecção pós operatória
+- deiscência de ferida
+- instabilidade (luxação aguda ou crônica)
 
-## Análises Estatísticas
+### Outras complicações
 
-Esta análise foi realizada utilizando-se o software `R` versão `r getRversion()`.
+- TVP
+- óbito
+- delirium
+- ITU
+- sepse
+- pneumonia
+- FX
+- parestesia
 
-# Resultados
+## Expressões regulares
 
-## População do estudo e acompanhamento
+Expressões regulares permitem fazer buscas em texto por palavras chave de forma flexível, permitindo considerar variações de grafia, maiúsculas e minúsculas entre outras coisas.
+Ao definir chaves de busca específicas para cada complicação, é possível identificar a presença da chave de busca no texto original.
 
-```{r tab_desc}
-# tab_desc %>%
-#     as_kable(
-#     align = "lccc",
-#     caption = "**Tabela 1** caption"
-#   )
-```
+Esta estratégia além de flexível também é expansível e permite ampliar a estratégia de busca que objetiva identificar cada complicação alvo.
+Na seção 4 serão descritas as chaves de busca usadas para identificação de cada uma das complicações listadas na seção 3.1.
 
-## Análise inferencial
+## Software utilizado
 
-```{r tab_inf}
-# tab_inf %>%
-#     as_kable(
-#     align = "lccc",
-#     caption = "**Tabela 2** caption"
-#   )
-```
+Esta análise foi realizada utilizando-se o software `R` versão 4.1.2.
+
+# Estratégia de busca
+
+Todas as expressões regulares descritas abaixo foram mapeadas ignorando o caso de grafia, isto é, todas funcionam da mesma forma independente se o texto base foi escrito em maiúsculas ou minúsculas.
+
+## Complicações individuais
+
+### Anemia com necessidade de transfusão sanguínea
+
+Chaves de busca:
+
+- `anemia`
+
+Número de identificações: `r sum(analytical$comp_anemia)`
+
+### Embolia pulmonar
+
+Chaves de busca:
+
+- `tep`
+- `embol`
+
+Número de identificações: `r sum(analytical$comp_tep)`
+
+### Tromboembolismo venoso
+
+Chaves de busca:
+
+- `tev`
+
+Número de identificações: `r sum(analytical$comp_tev)`
+
+### TVP
+
+Chaves de busca:
+
+- `tvp`
+
+Número de identificações: `r sum(analytical$comp_tvp)`
+
+### Instabilidade (luxação aguda ou crônica)
+
+Chaves de busca:
+
+- `instab`
+- `luxa`
+- `soltura`
+
+Número de identificações: `r sum(analytical$comp_inst)`
+
+### Deiscência de ferida
+
+Chaves de busca:
+
+- `deisc`
+
+Número de identificações: `r sum(analytical$comp_deisc)`
+
+### Infecção pós operatória
+
+Chaves de busca:
+
+- `infec`
+
+Número de identificações: `r sum(analytical$comp_infec)`
+
+### Distúrbios hidroeletrolíticos com repercussão clínica
+
+Chaves de busca:
+
+- `hidro`
+- `eletr[oó]l[íi]t`
+
+Número de identificações: `r sum(analytical$comp_hidro)`
+
+### Delirium
+
+Chaves de busca:
+
+- `delir`
+
+Número de identificações: `r sum(analytical$comp_delir)`
+
+### Óbito
+
+Chaves de busca:
+
+- `[óo]bito`
+- `morte`
+
+Número de identificações: `r sum(analytical$comp_obito)`
+
+### ITU
+
+Chaves de busca:
+
+- `itu`
+
+Número de identificações: `r sum(analytical$comp_itu)`
+
+### Sepse
+
+Chaves de busca:
+
+- `s[ée]p[st]`
+
+Número de identificações: `r sum(analytical$comp_sepse)`
+
+### Pneumonia
+
+Chaves de busca:
+
+- `pneumonia`
+
+Número de identificações: `r sum(analytical$comp_pneumo)`
+
+### FX
+
+Chaves de busca:
+
+- `fx`
+
+Número de identificações: `r sum(analytical$comp_fx)`
+
+### Parestesia
+
+Chaves de busca:
+
+- `parest`
+
+Número de identificações: `r sum(analytical$comp_parest)`
+
+## Qualquer complicação
+
+A fim de criar um desfecho composto que capturasse o risco de qualquer complicação pós-cirúrgiga no curto prazo, foi criada uma nova variável que é positiva se qualquer das complicações identificadas na seção 4.1.
+Ela é negativa apenas caso nenhuma das complicações individuais tenha ocorrido para aquele paciente.
+
+Número de identificações: `r sum(analytical$comp_qualquer)`
 
 # Observações e limitações
 
-# Conclusões
-
 # Referências
+
+N/A
 
 <!-- - **SAP-2021-023-LP-v01** -- Plano Analítico para Preparo da base de dados de estudo retrospectivo de complicações após revisão de artroplastia total de quadril em idosos -->
 <!-- - Cohen, J. (1988). Statistical power analysis for the behavioral sciences (2nd Ed.). New York: Routledge. -->
@@ -110,6 +271,8 @@ Esta análise foi realizada utilizando-se o software `R` versão `r getRversion(
 # Apêndice
 
 ## Análise exploratória de dados
+
+N/A
 
 ```{r A1, fig.cap="**Figura A1** Distribuição da idade na população do estudo."}
 # ![Age](../figures/distr_age.png)
