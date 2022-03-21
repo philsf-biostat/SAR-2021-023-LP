@@ -88,13 +88,7 @@ Nenhuma observação foi excluída como parte dos processos de limpeza de dados.
 
 ## Variáveis
 
-## Análises Estatísticas
-
-Esta análise foi realizada utilizando-se o software `R` versão 4.1.2.
-
-# Resultados
-
-## Complicações identificadas no projeto
+### Complicações identificadas no projeto
 
 - anemia
 - TEP / embolia
@@ -114,6 +108,12 @@ Esta análise foi realizada utilizando-se o software `R` versão 4.1.2.
 - pneumonia
 - FX
 - parestesia
+
+## Análises Estatísticas
+
+Esta análise foi realizada utilizando-se o software `R` versão 4.1.2.
+
+# Resultados
 
 # Observações e limitações
 
