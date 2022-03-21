@@ -252,6 +252,13 @@ Chaves de busca:
 
 Número de identificações: `r sum(analytical$comp_parest)`
 
+## Qualquer complicação
+
+A fim de criar um desfecho composto que capturasse o risco de qualquer complicação pós-cirúrgiga no curto prazo, foi criada uma nova variável que é positiva se qualquer das complicações identificadas na seção 4.1.
+Ela é negativa apenas caso nenhuma das complicações individuais tenha ocorrido para aquele paciente.
+
+Número de identificações: `r sum(analytical$comp_qualquer)`
+
 # Observações e limitações
 
 # Referências
