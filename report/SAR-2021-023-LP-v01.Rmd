@@ -67,6 +67,12 @@ source("scripts/input-raw.R", encoding = 'UTF-8')
 
 # Contexto
 
+O projeto "Artroplastia total do Quadril em septuagenários, complicações e resultados a curto prazo" identificará ocorrências de complicações após ATQ em pacientes septuagenários quando comparados a pacientes de faixas etárias inferiores.
+As complicações foram descritas de maneira qualitativa em campo de texto aberto, onde havia a possibilidade de múltiplas observações para um mesmo paciente.
+Para a análise das ocorrências das complicações, elas precisam ser codificadas como variáveis dicotômicas.
+
+Este relatório técnico descreve como as complicações foram identificadas na base de dados original, em campo de texto aberto, usando expressões regulares.
+
 ## Objetivos
 
 Limpeza da base de dados e identificação de cada tipo de complicação pós-cirúrgica dos participantes incluídos na base com chaves de busca por expressões regulares.
