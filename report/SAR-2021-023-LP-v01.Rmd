@@ -88,20 +88,19 @@ Nenhuma observação foi excluída como parte dos processos de limpeza de dados.
 
 ## Variáveis
 
-### Complicações identificadas no projeto
+### Complicações listadas no projeto
 
-- anemia
-- TEP / embolia
-- TEV
-- TVP / trombose
-- instabilidade / luxação / soltura
-- deiscência
-- infecção
-- distúrbios hidro-eletrolíticos
-- óbito
+- tromboembolismo venoso
+- embolia pulmonar
+- anemia com necessidade de transfusão sanguínea
+- distúrbios hidroeletrolíticos com repercussão clínica
+- infecção pós operatória
+- deiscência de ferida
+- instabilidade (luxação aguda ou crônica)
 
 ### Outras complicações
 
+- óbito
 - delirium
 - ITU
 - sepse
