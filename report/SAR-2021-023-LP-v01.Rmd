@@ -59,6 +59,7 @@ source("scripts/input-raw.R", encoding = 'UTF-8')
 # Lista de abreviaturas
 
 - ATQ: artroplastia total de quadril
+- FX:
 - TEV: tromboembolismo venoso
 - TEP: tromboembolia pulmonar
 - TVP: trombose venose profunda
@@ -81,41 +82,38 @@ Nenhuma observação foi excluída como parte dos processos de limpeza de dados.
 
 ## Variáveis
 
-### Desfechos primário e secundário
-
-### Covariáveis
-
 ## Análises Estatísticas
 
 Esta análise foi realizada utilizando-se o software `R` versão 4.1.2.
 
 # Resultados
 
-## População do estudo e acompanhamento
+## Complicações identificadas no projeto
 
-```{r tab_desc}
-# tab_desc %>%
-#     as_kable(
-#     align = "lccc",
-#     caption = "**Tabela 1** caption"
-#   )
-```
+- anemia
+- TEP / embolia
+- TEV
+- TVP / trombose
+- instabilidade / luxação / soltura
+- deiscência
+- infecção
+- distúrbios hidro-eletrolíticos
+- óbito
 
-## Análise inferencial
+### Outras complicações
 
-```{r tab_inf}
-# tab_inf %>%
-#     as_kable(
-#     align = "lccc",
-#     caption = "**Tabela 2** caption"
-#   )
-```
+- delirium
+- ITU
+- sepse
+- pneumonia
+- FX
+- parestesia
 
 # Observações e limitações
 
-# Conclusões
-
 # Referências
+
+N/A
 
 <!-- - **SAP-2021-023-LP-v01** -- Plano Analítico para Preparo da base de dados de estudo retrospectivo de complicações após revisão de artroplastia total de quadril em idosos -->
 <!-- - Cohen, J. (1988). Statistical power analysis for the behavioral sciences (2nd Ed.). New York: Routledge. -->
@@ -123,6 +121,8 @@ Esta análise foi realizada utilizando-se o software `R` versão 4.1.2.
 # Apêndice
 
 ## Análise exploratória de dados
+
+N/A
 
 ```{r A1, fig.cap="**Figura A1** Distribuição da idade na população do estudo."}
 # ![Age](../figures/distr_age.png)
