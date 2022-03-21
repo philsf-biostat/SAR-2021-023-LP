@@ -58,6 +58,12 @@ source("scripts/input-raw.R", encoding = 'UTF-8')
 
 # Lista de abreviaturas
 
+- ATQ: artroplastia total de quadril
+- TEV: tromboembolismo venoso
+- TEP: tromboembolia pulmonar
+- TVP: trombose venose profunda
+- ITU:
+
 # Contexto
 
 ## Objetivos
@@ -66,7 +72,10 @@ Limpeza da base de dados e identificação de cada tipo de complicação pós-ci
 
 ## Recepção e tratamento dos dados
 
-Depois dos procedimentos de limpeza e seleção `r ncol(analytical)` variáveis foram incluídas na análise com `r nrow(analytical)` observações.
+A base de dados original possuía `r Nvar_orig` variáveis coletadas de `r Nobs_orig` observações.
+Depois dos procedimentos de limpeza e seleção a base final contava com `r Nvar_final` variáveis de `r Nobs_final` observações.
+Nenhuma variávei foi removida no preparo da base, e a diferença é composta apenas pelas novas variáveis indicadoras criadas para classificar todas as possíveis complicações em cada participante incluído na base.
+Nenhuma observação foi excluída como parte dos processos de limpeza de dados.
 
 # Metodologia
 
@@ -78,7 +87,7 @@ Depois dos procedimentos de limpeza e seleção `r ncol(analytical)` variáveis 
 
 ## Análises Estatísticas
 
-Esta análise foi realizada utilizando-se o software `R` versão `r getRversion()`.
+Esta análise foi realizada utilizando-se o software `R` versão 4.1.2.
 
 # Resultados
 
