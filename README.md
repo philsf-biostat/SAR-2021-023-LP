@@ -1,6 +1,6 @@
 # Preparo da base de dados de estudo retrospectivo de complicações após revisão de artroplastia total de quadril em idosos
 
-Identificação de cada tipo de complicação pós-cirúrgica dos participantes incluídos na base com chaves de busca por expressões regulares
+Limpeza da base de dados e identificação de cada tipo de complicação pós-cirúrgica dos participantes incluídos na base com chaves de busca por expressões regulares.
 
 Análise Estatística para Lourenço Peixoto (INTO, 2021)
 

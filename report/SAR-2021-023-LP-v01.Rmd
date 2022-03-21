@@ -2,7 +2,7 @@
 title: "Preparo da base de dados de estudo retrospectivo de complicações após revisão de artroplastia total de quadril em idosos"
 subtitle: 'DOCUMENTO: SAR-2021-023-LP-v01'
 author: '**De:** Felipe Figueiredo **Para:** Lourenço Peixoto'
-date: "`r Sys.Date()`"
+date: "2022-02-02"
 output:
   html_document:
     fig_caption: yes
@@ -61,6 +61,8 @@ source("scripts/results.R", encoding = 'UTF-8')
 # Contexto
 
 ## Objetivos
+
+Limpeza da base de dados e identificação de cada tipo de complicação pós-cirúrgica dos participantes incluídos na base com chaves de busca por expressões regulares.
 
 ## Recepção e tratamento dos dados
 
