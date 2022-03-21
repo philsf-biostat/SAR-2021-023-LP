@@ -109,11 +109,19 @@ Nenhuma observação foi excluída como parte dos processos de limpeza de dados.
 - FX
 - parestesia
 
-## Análises Estatísticas
+## Expressões regulares
+
+Expressões regulares permitem fazer buscas em texto por palavras chave de forma flexível, permitindo considerar variações de grafia, maiúsculas e minúsculas entre outras coisas.
+Ao definir chaves de busca específicas para cada complicação, é possível identificar a presença da chave de busca no texto original.
+
+Esta estratégia além de flexível também é expansível e permite ampliar a estratégia de busca que objetiva identificar cada complicação alvo.
+Na seção 4 serão descritas as chaves de busca usadas para identificação de cada uma das complicações listadas na seção 3.1.
+
+## Software utilizado
 
 Esta análise foi realizada utilizando-se o software `R` versão 4.1.2.
 
-# Resultados
+# Estratégia de busca
 
 # Observações e limitações
 
