@@ -100,6 +100,7 @@ Nenhuma observação foi excluída como parte dos processos de limpeza de dados.
 
 ### Outras complicações
 
+- TVP
 - óbito
 - delirium
 - ITU
@@ -121,6 +122,135 @@ Na seção 4 serão descritas as chaves de busca usadas para identificação de 
 Esta análise foi realizada utilizando-se o software `R` versão 4.1.2.
 
 # Estratégia de busca
+
+Todas as expressões regulares descritas abaixo foram mapeadas ignorando o caso de grafia, isto é, todas funcionam da mesma forma independente se o texto base foi escrito em maiúsculas ou minúsculas.
+
+## Complicações individuais
+
+### Anemia com necessidade de transfusão sanguínea
+
+Chaves de busca:
+
+- `anemia`
+
+Número de identificações: `r sum(analytical$comp_anemia)`
+
+### Embolia pulmonar
+
+Chaves de busca:
+
+- `tep`
+- `embol`
+
+Número de identificações: `r sum(analytical$comp_tep)`
+
+### Tromboembolismo venoso
+
+Chaves de busca:
+
+- `tev`
+
+Número de identificações: `r sum(analytical$comp_tev)`
+
+### TVP
+
+Chaves de busca:
+
+- `tvp`
+
+Número de identificações: `r sum(analytical$comp_tvp)`
+
+### Instabilidade (luxação aguda ou crônica)
+
+Chaves de busca:
+
+- `instab`
+- `luxa`
+- `soltura`
+
+Número de identificações: `r sum(analytical$comp_inst)`
+
+### Deiscência de ferida
+
+Chaves de busca:
+
+- `deisc`
+
+Número de identificações: `r sum(analytical$comp_deisc)`
+
+### Infecção pós operatória
+
+Chaves de busca:
+
+- `infec`
+
+Número de identificações: `r sum(analytical$comp_infec)`
+
+### Distúrbios hidroeletrolíticos com repercussão clínica
+
+Chaves de busca:
+
+- `hidro`
+- `eletr[oó]l[íi]t`
+
+Número de identificações: `r sum(analytical$comp_hidro)`
+
+### Delirium
+
+Chaves de busca:
+
+- `delir`
+
+Número de identificações: `r sum(analytical$comp_delir)`
+
+### Óbito
+
+Chaves de busca:
+
+- `[óo]bito`
+- `morte`
+
+Número de identificações: `r sum(analytical$comp_obito)`
+
+### ITU
+
+Chaves de busca:
+
+- `itu`
+
+Número de identificações: `r sum(analytical$comp_itu)`
+
+### Sepse
+
+Chaves de busca:
+
+- `s[ée]p[st]`
+
+Número de identificações: `r sum(analytical$comp_sepse)`
+
+### Pneumonia
+
+Chaves de busca:
+
+- `pneumonia`
+
+Número de identificações: `r sum(analytical$comp_pneumo)`
+
+### FX
+
+Chaves de busca:
+
+- `fx`
+
+Número de identificações: `r sum(analytical$comp_fx)`
+
+### Parestesia
+
+Chaves de busca:
+
+- `parest`
+
+Número de identificações: `r sum(analytical$comp_parest)`
 
 # Observações e limitações
 
