@@ -262,6 +262,8 @@ Número de identificações: `r sum(analytical$comp_qualquer)`
 # Observações e limitações
 
 A estratégia utilizada neste relatório técnico são flexíveis o suficiente para permitir a identificação de informações alvo com diferentes grafias, incluindo acentuação, erros tipográficos típicos entre outros.
+Adicionalmente caso novas chaves sejam requeridas, elas podem ser facilmente acrescentadas ao algoritmo de busca para ampliar o escopo da identificação.
+
 A principal limitação desta estratégia pode ser identificada na busca de chaves de texto pre-determinadas para identificar informações alvo.
 A qualidade do resultado depende do estabelcimento prévio de chaves de busca abrangentes, suficientes e adequadas ao texto alvo.
 
