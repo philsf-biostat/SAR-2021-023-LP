@@ -62,7 +62,7 @@ source("scripts/input-raw.R", encoding = 'UTF-8')
 - FX:
 - TEV: tromboembolismo venoso
 - TEP: tromboembolia pulmonar
-- TVP: trombose venose profunda
+- TVP: trombose venosa profunda
 - ITU:
 
 # Contexto
@@ -81,7 +81,7 @@ Limpeza da base de dados e identificação de cada tipo de complicação pós-ci
 
 A base de dados original possuía `r Nvar_orig` variáveis coletadas de `r Nobs_orig` observações.
 Depois dos procedimentos de limpeza e seleção a base final contava com `r Nvar_final` variáveis de `r Nobs_final` observações.
-Nenhuma variávei foi removida no preparo da base, e a diferença é composta apenas pelas novas variáveis indicadoras criadas para classificar todas as possíveis complicações em cada participante incluído na base.
+Nenhuma variável foi removida no preparo da base, e a diferença é composta apenas pelas novas variáveis indicadoras criadas para classificar todas as possíveis complicações em cada participante incluído na base.
 Nenhuma observação foi excluída como parte dos processos de limpeza de dados.
 
 # Metodologia
@@ -111,7 +111,7 @@ Nenhuma observação foi excluída como parte dos processos de limpeza de dados.
 
 ## Expressões regulares
 
-Expressões regulares permitem fazer buscas em texto por palavras chave de forma flexível, permitindo considerar variações de grafia, maiúsculas e minúsculas entre outras coisas.
+Expressões regulares permitem fazer buscas em texto por palavras-chave de forma flexível, permitindo considerar variações de grafia, maiúsculas e minúsculas entre outras coisas.
 Ao definir chaves de busca específicas para cada complicação, é possível identificar a presença da chave de busca no texto original.
 
 Esta estratégia além de flexível também é expansível e permite ampliar a estratégia de busca que objetiva identificar cada complicação alvo.
@@ -254,7 +254,7 @@ Número de identificações: `r sum(analytical$comp_parest)`
 
 ## Qualquer complicação
 
-A fim de criar um desfecho composto que capturasse o risco de qualquer complicação pós-cirúrgiga no curto prazo, foi criada uma nova variável que é positiva se qualquer das complicações identificadas na seção 4.1.
+A fim de criar um desfecho composto que capturasse o risco de qualquer complicação pós-cirúrgica no curto prazo, foi criada uma nova variável que é positiva se qualquer das complicações identificadas na seção 4.1.
 Ela é negativa apenas caso nenhuma das complicações individuais tenha ocorrido para aquele paciente.
 
 Número de identificações: `r sum(analytical$comp_qualquer)`
@@ -262,10 +262,10 @@ Número de identificações: `r sum(analytical$comp_qualquer)`
 # Observações e limitações
 
 A estratégia utilizada neste relatório técnico são flexíveis o suficiente para permitir a identificação de informações alvo com diferentes grafias, incluindo acentuação, erros tipográficos típicos entre outros.
-Adicionalmente caso novas chaves sejam requeridas, elas podem ser facilmente acrescentadas ao algoritmo de busca para ampliar o escopo da identificação.
+Adicionalmente, caso novas chaves se mostrem necessárias, elas podem ser facilmente acrescentadas ao algoritmo de busca para ampliar o escopo da identificação.
 
-A principal limitação desta estratégia pode ser identificada na busca de chaves de texto pre-determinadas para identificar informações alvo.
-A qualidade do resultado depende do estabelcimento prévio de chaves de busca abrangentes, suficientes e adequadas ao texto alvo.
+A principal limitação desta estratégia pode ser identificada na busca de chaves de texto pré-determinadas para identificar informações alvo.
+A qualidade do resultado depende do estabelecimento prévio de chaves de busca abrangentes, suficientes e adequadas ao texto alvo.
 
 # Referências
 
