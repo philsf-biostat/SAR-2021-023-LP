@@ -2,7 +2,7 @@
 
 Limpeza da base de dados e identificação de cada tipo de complicação pós-cirúrgica dos participantes incluídos na base com chaves de busca por expressões regulares.
 
-Análise Estatística para Lourenço Peixoto (INTO, 2021)
+Relatório técnico para Lourenço Peixoto (INTO, 2021)
 
 ## Análises realizadas
 
