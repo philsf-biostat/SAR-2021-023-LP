@@ -1,6 +1,6 @@
 ---
 title: 'Preparo da base de dados de estudo retrospectivo de complicações após revisão de artroplastia total de quadril em idosos'
-date: ""
+date: "2022-02-02"
 permalink: /portfolio/SAR-2021-023/
 redirect_from:
   - /portfolio/SAR-2021-023/
@@ -36,9 +36,13 @@ Relatório técnico para Lourenço Peixoto (INTO, 2021)
 
 Esta análise é parte de um projeto maior e é suportada por outras análises, disponíveis abaixo.
 
-**Prevalência de qualquer complicaçção em idosos após artroplastia total de quadril primária em hospital de referência no RJ (2016 -- 2019)**
+**Prevalência de qualquer complicação em idosos após artroplastia total de quadril primária em hospital de referência no RJ (2016 -- 2019)**
 
 <https://philsf-biostat.github.io/SAR-2022-006-LP>
+
+**Prevalência de complicações específicas em idosos após artroplastia total de quadril primária em hospital de referência no RJ (2016 -- 2019)**
+
+<https://philsf-biostat.github.io/SAR-2022-018-LP>
 
 ---
 

@@ -34,9 +34,13 @@ Relatório técnico para Lourenço Peixoto (INTO, 2021)
 
 Esta análise é parte de um projeto maior e é suportada por outras análises, disponíveis abaixo.
 
-**Prevalência de qualquer complicaçção em idosos após artroplastia total de quadril primária em hospital de referência no RJ (2016 -- 2019)**
+**Prevalência de qualquer complicação em idosos após artroplastia total de quadril primária em hospital de referência no RJ (2016 -- 2019)**
 
 <https://philsf-biostat.github.io/SAR-2022-006-LP>
+
+**Prevalência de complicações específicas em idosos após artroplastia total de quadril primária em hospital de referência no RJ (2016 -- 2019)**
+
+<https://philsf-biostat.github.io/SAR-2022-018-LP>
 
 ## Portfólio
 
